@@ -1,8 +1,7 @@
-// MyApp = {};
+MyApp = {};
 MyApp = require('./DiContainer')
 
 MyApp.diContainer = new DiContainer();
-
 
 MyApp.diContainer.register(
     'ServiceTest',
@@ -14,7 +13,7 @@ MyApp.diContainer.register(
             }
         }
     }
-)
+);
 
 MyApp.diContainer.register(
     'Service',      // 웹 서비스를 가리키는 DI태그
@@ -22,7 +21,7 @@ MyApp.diContainer.register(
     function() {    // 인스턴스를 반환하는 함수
         return new ConferenceWebSvc();
     }
-)
+);
 
 MyApp.diContainer.register (
     'Messenger',
@@ -30,7 +29,7 @@ MyApp.diContainer.register (
     function () {
         return new Messenger()
     }
-)
+);
 
 MyApp.diContainer.register (
     'AttendeeFactory',
@@ -38,7 +37,7 @@ MyApp.diContainer.register (
     function (service, messenger) {
         return new Attendee(service, messenger, attendeeId)
     }
-)
+);
 
 var serviceTest = MyApp.diContainer.get('ServiceTest')
 // var serviceTest1 = MyApp.diContainer.get('AttendeeFactory')

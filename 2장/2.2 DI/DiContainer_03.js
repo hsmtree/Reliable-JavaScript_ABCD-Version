@@ -16,9 +16,7 @@ DiContainer.prototype.register = function(name, dependencies, func) {
 
   var ix;
 
-  if (typeof name !== 'string'
-  || !Array.isArray(dependencies)
-  || typeof func !== 'function') {
+  if (typeof name !== 'string' || !Array.isArray(dependencies) || typeof func !== 'function') {
     throw new Error(this.messages.registerRequiresArgs);
   }
   for (ix=0; ix<dependencies.length; ++ix) {

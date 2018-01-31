@@ -16,10 +16,8 @@ DiContainer.prototype.register = function(name, dependencies, func) {
 
   var ix;
 
-  if (typeof name !== 'string'
-    || !Array.isArray(dependencies)
-    || typeof func !== 'function') {
-      throw new Error(this.messages.registerRequiresArgs);
+  if (typeof name !== 'string' || !Array.isArray(dependencies) || typeof func !== 'function') {
+    throw new Error(this.messages.registerRequiresArgs);
   }
   for (ix=0; ix<dependencies.length; ++ix) {
     if (typeof dependencies[ix] !== 'string') {
@@ -32,7 +30,7 @@ DiContainer.prototype.register = function(name, dependencies, func) {
 
 DiContainer.prototype.get = function(name) {
   var registration = this.registrations[name];
-  if (registration === undefined) {
+  if (registration === undefined || registration === null) {
     return undefined;
   }
   return registration.func();
