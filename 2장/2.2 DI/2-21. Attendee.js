@@ -1,3 +1,4 @@
+// http://requirejs.org
 MyApp = {};
 MyApp = require('./DiContainer')
 
