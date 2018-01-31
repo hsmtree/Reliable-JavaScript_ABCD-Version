@@ -78,7 +78,6 @@ rj3.svg.line = function() {
 //       }),
 //       lineGenerator = rj3.svg.line(),
 //       path = lineGenerator(arrayData);
-
 // }());
 
 
